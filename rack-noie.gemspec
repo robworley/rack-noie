@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{rack-noie}
+  s.name = %q{robworley-rack-noie}
   s.version = "1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Julio Cesar Ody"]
+  s.authors = ["Julio Cesar Ody", "Rob Worley"]
   s.date = %q{2009-05-11}
-  s.email = %q{julioody@gmail.com}
+  s.email = %q{robert.worley@gmail.com}
   s.extra_rdoc_files = [
     "README.markdown"
   ]
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     "test/noie_test.rb"
   ]
   s.has_rdoc = true
-  s.homepage = %q{http://github.com/juliocesar/rack-noie}
+  s.homepage = %q{http://github.com/robworley/rack-noie}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}

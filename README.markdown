@@ -5,7 +5,7 @@ a favor: it shows the way out of your website to poor souls out there using Inte
 
 # installation
 
-    sudo gem install rack-noie -s http://gemcutter.org
+    sudo gem install robworley-rack-noie -s http://gemcutter.org
 
 # usage
 
