@@ -24,7 +24,7 @@ module Rack
 
     def is_ie?(ua_string)
       # We need at least one digit to be able to get the version, hence the \d
-      ua_string.match(/MSIE \d/) ? true : false
+      ua_string.match(/MSIE \d/) && !ua_string.match(/MS Web Services Client Protocol/) ? true : false
     end
 
     def ie_version(ua_string)
@@ -32,7 +32,7 @@ module Rack
     end
 
     def kick_it
-      [301, {'Location' => @options[:redirect]}, ['Fail browser is fail']]
+      [301, {'Location' => @options[:redirect]}, ['User agent not permitted.']]
     end
 
     def enforce_noie?(env)

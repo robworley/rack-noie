@@ -39,6 +39,12 @@ class NoieTest < Test::Unit::TestCase
     assert_equal "Hi Internets!", response.body
   end
 
+  def test_dotnet_soap_client_is_not_considered_ie
+    request  = Rack::MockRequest.new(Rack::NoIE.new(TestApp.new, {:redirect => 'http://slashdot.org'}))
+    response = request.get('/', {'HTTP_USER_AGENT' => 'Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 2.0.50727.3615)'})
+    assert_equal "Hi Internets!", response.body
+  end
+
   def test_allows_if_UA_version_greater_than_minimum
     request  = Rack::MockRequest.new(Rack::NoIE.new(TestApp.new, {:redirect => 'http://slashdot.org'}))
     response = request.get('/', {'HTTP_USER_AGENT' => 'Mozilla/4.0 (compatible; MSIE 8.0; Windows XP)'})
